@@ -34,7 +34,7 @@ export const createOrder = async (req, res) => {
 
 export const getMyOrders = async (req, res) => {
   try {
-    const result = await orders.find({ u_id: req.user._id }).populate('products._id')
+    const result = await orders.find({ u_id: req.user._id }).populate('products.data')
     res.status(200).json({ success: true, message: '', result })
   } catch (error) {
     res.status(500).json({ success: false, message: '未知錯誤' })
@@ -44,7 +44,7 @@ export const getMyOrders = async (req, res) => {
 export const getAllOrders = async (req, res) => {
   try {
     // .populate(關聯資料路徑, 取的欄位)
-    const result = await orders.find().populate('products._id').populate('u_id', 'account')
+    const result = await orders.find().populate('products.data').populate('u_id', 'account')
     res.status(200).json({ success: true, message: '', result })
   } catch (error) {
     res.status(500).json({ success: false, message: '未知錯誤' })

@@ -3,7 +3,7 @@ import { Schema, model, ObjectId } from 'mongoose'
 const orderSchema = new Schema({
   data: {
     type: ObjectId,
-    refPath: 'cart',
+    refPath: 'products.dataModel',
     required: [true, '缺少 ID']
   },
   dataModel: {
