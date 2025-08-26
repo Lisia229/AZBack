@@ -17,6 +17,9 @@ import './passport/passport.js'
 mongoose.connect(process.env.DB_URL)
 mongoose.set('sanitizeFilter', true)
 
+// 若你希望未來 Mongoose 7 的行為（strictQuery=false）
+mongoose.set('strictQuery', true)
+
 const app = express()
 
 // - 跨域請求設定
