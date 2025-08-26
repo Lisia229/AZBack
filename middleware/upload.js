@@ -4,7 +4,7 @@ import { CloudinaryStorage } from 'multer-storage-cloudinary'
 import multer from 'multer'
 
 cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_NAME,
+  cloud_name: process.env.CLOUDINARY,
   api_key: process.env.CLOUDINARY_KEY,
   api_secret: process.env.CLOUDINARY_SECRET
 })
